@@ -1,0 +1,31 @@
+<template>
+  <div class="form-group le-item" repeat.for="item of items">
+    <template with.bind="item">
+      <template replaceable part="item">
+        <div class="col-sm-2 col-sm-offset-1">
+          <template replaceable part="label"></template>
+        </div>
+        <div class="col-sm-8">
+          <template replaceable part="value">${$this}</template>
+        </div>
+        <div class="col-sm-1">
+          <template replaceable part="remove-btn">
+            <button type="button" class="btn btn-danger le-remove-btn" title="${'resources.actions.remove' & t}" click.delegate="items.splice($index, 1)">
+              <i class="fa fa-times"></i>
+            </button>
+          </template>
+        </div>
+      </template>
+    </template>
+  </div>
+  <div class="form-group" show.bind="addItem">
+    <div class="col-sm-9 col-sm-offset-3">
+      <button type="button" class="btn btn-primary le-add-btn" click.delegate="addItem()">
+        <slot name="add-button-content">
+          <i class="fa fa-plus-square-o"></i>
+          <slot name="add-button-label">${'resources.actions.add' & t}</slot>
+        </slot>
+      </button>
+    </div>
+  </div>
+</template>

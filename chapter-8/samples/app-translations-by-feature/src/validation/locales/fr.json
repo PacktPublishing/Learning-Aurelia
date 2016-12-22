@@ -1,0 +1,15 @@
+{
+  "default": "${$displayName} est invalide.",
+  "required": "${$displayName} est requis.",
+  "matches": "${$displayName} est mal formaté.",
+  "email": "${$displayName} n'est pas un email valide.",
+  "minLength": "${$displayName} doit contenir au moins ${$config.length} caractère${$config.length === 1 ? '' : 's'}.",
+  "maxLength": "${$displayName} ne doit pas contenir plus de ${$config.length} caractère${$config.length === 1 ? '' : 's'}.",
+  "minItems": "${$displayName} doit contenir au moins ${$config.count} item${$config.count === 1 ? '' : 's'}.",
+  "maxItems": "${$displayName} ne doit pas contenir plus de ${$config.count} item${$config.count === 1 ? '' : 's'}.",
+  "equals": "${$displayName} doit égaler ${$config.expectedValue}.",
+  "date": "${$displayName} n'est pas une date valide.",
+  "notEmpty": "${$displayName} doit contenir au moins un item.",
+  "maxFileSize": "${$displayName} doit faire moins de ${$config.maxSize} octets.",
+  "fileExtension": "${$displayName} doit avoir une des extensions suivantes: ${$config.extensions.join(', ')}."
+}

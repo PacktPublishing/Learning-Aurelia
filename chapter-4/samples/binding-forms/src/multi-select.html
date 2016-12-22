@@ -1,0 +1,40 @@
+<template>
+  <h1><code>select</code>, multi-selection</h1>
+
+  <hr>
+  <h3>Scalar items</h3>
+  <p>Here, a multi-selection <code>select</code> is rendered using an array of strings.</p>
+  <div>
+    <select value.two-way="selectedCountries" multiple>
+      <option repeat.for="country of countries" value.bind="country">${country}</option>
+    </select>
+    Selected values: 
+    <template repeat.for="c of selectedCountries"><template if.bind="!$first">, </template>${c}</template>
+  </div>
+
+  <hr>
+  <h3>Object items, selected <code>model</code></h3>
+  <p>Here, a multi-selection <code>select</code> is rendered using an array of objects, and
+  the selected <code>option</code>s' <code>model</code> are added to the array bound to the
+  <code>select</code>'s <code>value</code>.</p>
+  <div> 
+    <select value.bind="selectedCultures" multiple>
+      <option repeat.for="culture of cultures" model.bind="culture">${culture.name}</option>
+    </select>
+    Selected values:
+    <template repeat.for="c of selectedCultures"><template if.bind="!$first">, </template>${c | json}</template>
+  </div>
+
+  <hr>
+  <h3>Object items, selected <code>value</code></h3>
+  <p>Here, a multi-selection <code>select</code> is rendered using an array of objects, and
+  the selected <code>option</code>s' <code>value</code> are added to the array bound to
+  the <code>select</code>'s <code>value</code>.</p>
+  <div>
+    <select value.bind="selectedCulturesIsoCodes" multiple>
+      <option repeat.for="culture of cultures" value.bind="culture.isoCode">${culture.name}</option>
+    </select>
+    Selected values:
+    <template repeat.for="c of selectedCulturesIsoCodes"><template if.bind="!$first">, </template>${c}</template> 
+  </div>
+</template>

@@ -1,0 +1,10 @@
+{
+  "title": "Learning Aurelia",
+  "404": {
+    "explanation": "The page cannot be found.",
+    "title": "Something is broken…"
+  },
+  "nav": {
+    "toggle": "Toggle Navigation"
+  }
+}

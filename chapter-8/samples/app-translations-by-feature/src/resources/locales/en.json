@@ -1,0 +1,11 @@
+{
+  "locales": {
+    "en": "English",
+    "fr": "French"
+  },
+  "actions": {
+    "add": "Add",
+    "remove": "Remove",
+    "submit": "Submit"
+  }
+}

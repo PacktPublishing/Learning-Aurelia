@@ -1,0 +1,50 @@
+<template>
+  <h1>Radio buttons</h1>
+
+  <hr>
+  <h3>Scalar items, selected value</h3>
+  <p>Here, a list of radio buttons is rendered using an array of strings.</p>
+  <div class="radio" repeat.for="country of countries">
+    <label>
+      <input type="radio" name="countries" value.bind="country" checked.bind="selectedCountry">
+      ${country}
+    </label>
+  </div>
+  <p>Selected value: ${selectedCountry}</p>
+
+  <hr>
+  <h3>Object items, selected <code>model</code></h3>
+  <p>Here, a list of radio buttons is rendered using an array of objects, and
+  the selected <code>input</code>'s <code>model</code> is assigned to the expression bound to the
+  <code>input</code>'s <code>checked</code> attribute.</p>
+  <div class="radio" repeat.for="culture of cultures">
+    <label>
+      <input type="radio" name="cultures" model.bind="culture" checked.bind="selectedCulture">
+      ${culture.name}
+    </label>
+  </div>
+  <p>Selected value: ${selectedCulture | json}</p>
+
+  <hr>
+  <h3>Using <code>model</code> to bind a boolean value</h3>
+  <p>Here, static radio buttons, with their <code>model</code>s bound to static boolean values,
+  have their <code>checked</code> attribute bound to a same property, which is assigned the value 
+  of the selected radio's <code>model</code> attribute.</p>
+  <h4>Do you speak more than one language?</h4>
+  <div class="radio">
+    <label>
+      <input type="radio" name="isMultilingual" model.bind="null" checked.bind="isMultilingual"> That's none of your business
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="isMultilingual" model.bind="true" checked.bind="isMultilingual"> Yes
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="isMultilingual" model.bind="false" checked.bind="isMultilingual"> No
+    </label>
+  </div>
+  <p>Selected value: ${isMultilingual | json}</p>
+</template>

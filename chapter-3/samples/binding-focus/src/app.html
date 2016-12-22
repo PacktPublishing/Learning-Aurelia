@@ -1,0 +1,5 @@
+<template>
+  <input type="text" focus.bind="hasFocus">
+  <p>Has focus: ${hasFocus ? 'Yes' : 'No'}</p>
+  <button click.delegate="hasFocus = true">Give focus</button>
+</template>

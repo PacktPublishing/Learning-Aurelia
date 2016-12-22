@@ -1,0 +1,156 @@
+<template>
+  <section class="container">
+    <h1 if.bind="isNew">New contact</h1>
+    <h1 if.bind="!isNew">Contact #${contact.id}</h1>
+
+    <form class="form-horizontal" validation-renderer="bootstrap-form" submit.delegate="save()">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">First name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value.bind="contact.firstName & validate">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Last name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value.bind="contact.lastName & validate">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Company</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value.bind="contact.company & validate">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Birthday</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" value.bind="contact.birthday & validate">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Note</label>
+        <div class="col-sm-9">
+          <textarea class="form-control" value.bind="contact.note & validate"></textarea>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-group" repeat.for="phoneNumber of contact.phoneNumbers">
+        <div class="col-sm-2 col-sm-offset-1">${phoneNumber.type}</div>
+        <div class="col-sm-7">${phoneNumber.number}</div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-primary" title="Edit" click.delegate="editPhoneNumber(phoneNumber)">
+            <i class="fa fa-pencil"></i>
+          </button>
+        </div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-danger" title="Remove" click.delegate="contact.phoneNumbers.splice($index, 1)">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <button type="button" class="btn btn-primary" click.delegate="addPhoneNumber()">
+            <i class="fa fa-plus-square-o"></i> Add a phone number
+          </button>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-group" repeat.for="emailAddress of contact.emailAddresses">
+        <div class="col-sm-2 col-sm-offset-1">${emailAddress.type}</div>
+        <div class="col-sm-7">${emailAddress.address}</div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-primary" title="Edit" click.delegate="editEmailAddress(emailAddress)">
+            <i class="fa fa-pencil"></i>
+          </button>
+        </div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-danger" title="Remove" click.delegate="contact.emailAddresses.splice($index, 1)">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <button type="button" class="btn btn-primary" click.delegate="addEmailAddress()">
+            <i class="fa fa-plus-square-o"></i> Add an email address
+          </button>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-group" repeat.for="address of contact.addresses">
+        <div class="col-sm-2 col-sm-offset-1">${address.type}</div>
+        <div class="col-sm-7">
+          <div class="row">
+            <div class="col-sm-4">${address.number}</div>
+            <div class="col-sm-8">${address.street}</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">${address.postalCode}</div>
+            <div class="col-sm-8">${address.city}</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">${address.state}</div>
+            <div class="col-sm-8">${address.country}</div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-primary" title="Edit" click.delegate="editAddress(address)">
+            <i class="fa fa-pencil"></i>
+          </button>
+        </div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-danger" title="Remove" click.delegate="contact.addresses.splice($index, 1)">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <button type="button" class="btn btn-primary" click.delegate="addAddress()">
+            <i class="fa fa-plus-square-o"></i> Add an address
+          </button>
+        </div>
+      </div>
+
+      <hr>
+      <div class="form-group" repeat.for="profile of contact.socialProfiles">
+        <div class="col-sm-2 col-sm-offset-1">${profile.type}</div>
+        <div class="col-sm-7">${profile.username}</div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-primary" title="Edit" click.delegate="editSocialProfile(profile)">
+            <i class="fa fa-pencil"></i>
+          </button>
+        </div>
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-danger" title="Remove" click.delegate="contact.socialProfiles.splice($index, 1)">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <button type="button" class="btn btn-primary" click.delegate="addSocialProfile()">
+            <i class="fa fa-plus-square-o"></i> Add a social profile
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <button type="submit" class="btn btn-success">Save</button>
+          <a if.bind="isNew" class="btn btn-danger" route-href="route: contacts">Cancel</a>
+          <a if.bind="!isNew" class="btn btn-danger" route-href="route: contact-details; params.bind: { id: contact.id }">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </section>
+</template>

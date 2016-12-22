@@ -1,0 +1,18 @@
+<template>
+  <require from="./form.html" as="contact-form"></require>
+
+  <section class="container">
+    <h1 t="contacts:newContact"></h1>
+
+    <form class="form-horizontal" validation-renderer="bootstrap-form" submit-task.call="save()">
+      <contact-form contact.bind="contact"></contact-form>
+
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <submit-button>${'contacts:save' & t}</submit-button>
+          <a class="btn btn-danger" route-href="route: contacts" t="contacts:cancel"></a>
+        </div>
+      </div>
+    </form>
+  </section>
+</template>

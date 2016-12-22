@@ -1,0 +1,40 @@
+<template>
+  <h1><code>select</code>, single-selection</h1>
+
+  <hr>
+  <h3>Scalar items</h3>
+  <p>Here, a single-selection <code>select</code> is rendered using an array of strings.</p>
+  <div>
+    <select value.bind="selectedCountry">
+      <option value="">Select your country</option>
+      <option repeat.for="country of countries" value.bind="country">${country}</option>
+    </select>
+    Selected value: ${selectedCountry}
+  </div>
+
+  <hr>
+  <h3>Object items, selected <code>model</code></h3>
+  <p>Here, a single-selection <code>select</code> is rendered using an array of objects, and
+  the selected <code>option</code>'s <code>model</code> is assigned to the expression bound to the
+  <code>select</code>'s <code>value</code>.</p>
+  <div> 
+    <select value.bind="selectedCulture">
+      <option value="">Select your culture</option>
+      <option repeat.for="culture of cultures" model.bind="culture">${culture.name}</option>
+    </select>
+    Selected value: ${selectedCulture | json}
+  </div>
+
+  <hr>
+  <h3>Object items, selected <code>value</code></h3>
+  <p>Here, a single-selection <code>select</code> is rendered using an array of objects, and
+  the selected <code>option</code>'s <code>value</code> is assigned to the expression bound to
+  the <code>select</code>'s <code>value</code>.</p>
+  <div> 
+    <select value.bind="selectedCultureIsoCode">
+      <option value="">Select your culture</option>
+      <option repeat.for="culture of cultures" value.bind="culture.isoCode">${culture.name}</option>
+    </select>
+    Selected value: ${selectedCultureIsoCode}
+  </div>
+</template>

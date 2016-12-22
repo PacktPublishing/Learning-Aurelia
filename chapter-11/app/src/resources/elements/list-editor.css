@@ -1,0 +1,35 @@
+list-editor .le-item.au-enter-active {
+  -webkit-animation: blindDown 0.2s;
+  animation: blindDown 0.2s;
+  overflow: hidden;
+}
+
+@-webkit-keyframes blindDown {
+  0% { max-height: 0px; }
+  100% { max-height: 80px; }
+}
+
+@keyframes blindDown {
+  0% { max-height: 0px; }
+  100% { max-height: 80px; }
+}
+
+list-editor .le-item.au-leave-active {
+  -webkit-animation: blindUp 0.2s;
+  animation: blindUp 0.2s;
+  overflow: hidden;
+}
+
+@-webkit-keyframes blindUp {
+  0% { max-height: 80px; }
+  100% { max-height: 0px; }
+}
+
+@keyframes blindUp {
+  0% { max-height: 80px; }
+  100% { max-height: 0px; }
+}
+
+list-editor .sort-handle {
+ cursor: move;
+}

@@ -1,0 +1,121 @@
+<template>
+  <require from="./form.css"></require>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" t="contacts.firstName"></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.firstName & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" t="contacts.lastName"></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.lastName & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" t="contacts.company"></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.company & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" t="contacts.birthday"></label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.birthday & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label" t="contacts.note"></label>
+    <div class="col-sm-9">
+      <textarea class="form-control" value.bind="contact.note & validate"></textarea>
+    </div>
+  </div>
+
+  <hr>
+  <list-editor items.bind="contact.phoneNumbers" add-item.call="contact.addPhoneNumber()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="Home" t="contacts.types.Home"></option>
+        <option value="Office" t="contacts.types.Office"></option>
+        <option value="Mobile" t="contacts.types.Mobile"></option>
+        <option value="Other" t="contacts.types.Other"></option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <input type="tel" class="form-control" t="[placeholder]contacts.phoneNumber" value.bind="number & validate">
+    </template>
+    <span slot="add-button-label" t="contacts.addPhoneNumber"></span>
+  </list-editor>
+
+  <hr>
+  <list-editor items.bind="contact.emailAddresses" add-item.call="contact.addEmailAddress()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="Home" t="contacts.types.Home"></option>
+        <option value="Office" t="contacts.types.Office"></option>
+        <option value="Other" t="contacts.types.Other"></option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <input type="email" class="form-control" t="[placeholder]contacts.emailAddress" value.bind="address & validate">
+    </template>
+    <span slot="add-button-label" t="contacts.addEmailAddress"></span>
+  </list-editor>
+
+  <hr> 
+  <list-editor items.bind="contact.addresses" add-item.call="contact.addAddress()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="Home" t="contacts.types.Home"></option>
+        <option value="Office" t="contacts.types.Office"></option>
+        <option value="Other" t="contacts.types.Other"></option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" t="[placeholder]contacts.number" value.bind="number & validate">
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" t="[placeholder]contacts.street" value.bind="street & validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" t="[placeholder]contacts.postalCode" value.bind="postalCode & validate">
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" t="[placeholder]contacts.city" value.bind="city & validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" t="[placeholder]contacts.state" value.bind="state & validate">
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" t="[placeholder]contacts.country" value.bind="country & validate">
+        </div>
+      </div>
+    </template>
+    <span slot="add-button-label" t="contacts.addAddress"></span>
+  </list-editor>
+
+  <hr>
+  <list-editor items.bind="contact.socialProfiles" add-item.call="contact.addSocialProfile()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="GitHub" t="contacts.types.GitHub"></option>
+        <option value="Twitter" t="contacts.types.Twitter"></option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <input type="text" class="form-control" t="[placeholder]contacts.username" value.bind="username & validate">
+    </template>
+    <span slot="add-button-label" t="contacts.addSocialProfile"></span>
+  </list-editor>
+</template>

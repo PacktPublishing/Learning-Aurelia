@@ -1,0 +1,31 @@
+<template>
+  <h1><code>input</code> &amp; <code>textarea</code></h1>
+
+  <hr>
+  <h3><code>text input</code></h3>
+  <p>Here, the <code>value</code> attribute of a <code>text input</code> is bound to a property.
+  <div class="form-group">
+    <input type="text" class="form-control" value.bind="title">
+    Value: ${title}
+  </div>
+
+  <h3><code>file input</code></h3>
+  <p>Here, the <code>files</code> attribute of a <code>file input</code> is bound to a property.
+  <div class="form-group">
+    <input type="file" class="form-control" accept="image/*" files.bind="files" multiple>
+    Selected files: <span if.bind="!files || files.length === 0">None</span>
+    <ul>
+      <li repeat.for="file of files | fileListToArray">
+        ${file.name} (${file.type}, ${file.size} bytes)
+      </li>
+    </ul>
+  </div>
+
+  <h3><code>textarea</code></h3>
+  <p>Here, the <code>value</code> attribute of a <code>textarea</code> is bound to a property.
+  <div class="form-group">
+    <textarea class="form-control" value.bind="text"></textarea>
+    Text: ${text}
+  </div>
+
+</template>

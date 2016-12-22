@@ -1,0 +1,19 @@
+<template>
+  <button class="btn btn-default" click.delegate="isMapVisible = !isMapVisible" disabled.bind="!isGeocoded">
+    ${isMapVisible ? 'contacts.hideMap' : 'contacts.showMap' & t}
+  </button>
+  <google-map if.bind="isMapVisible" 
+              latitude.bind="latitude" 
+              longitude.bind="longitude" 
+              zoom="15" 
+              style="display: block; height: 400px;" 
+              api-key="AIzaSyDEJeEI58qmxN1ylED1bpj4Z32ztkYh6p4">
+    <google-map-marker latitude.bind="latitude" 
+                       longitude.bind="longitude" 
+                       open="true">
+      ${address.number} ${address.street}
+      ${address.postalCode} ${address.city} 
+      ${address.state} ${address.country}
+    </google-map-marker>
+  </google-map>
+</template>

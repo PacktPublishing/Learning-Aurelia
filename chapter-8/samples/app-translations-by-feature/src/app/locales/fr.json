@@ -1,0 +1,10 @@
+{
+  "title": "Apprendre Aurelia",
+  "404": {
+    "explanation": "La page est introuvable.",
+    "title": "Quelque-chose ne fonctionne pas…"
+  },
+  "nav": {
+    "toggle": "Ouvrir/fermer le menu"
+  }
+}

@@ -1,0 +1,38 @@
+<template>
+  <section class="container">
+    <h1>Contacts</h1>
+
+    <div class="row">
+      <div class="col-sm-1">
+        <a route-href="route: contact-creation" class="btn btn-primary cl-create-btn">
+          <i class="fa fa-plus-square-o"></i> New
+        </a>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Filter" value.bind="filter & debounce">
+          <span class="input-group-btn" if.bind="filter">
+            <button class="btn btn-default cl-clear-filter-btn" type="button" click.delegate="filter = ''">
+              <i class="fa fa-times"></i>
+              <span class="sr-only">Clear</span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <group-list items.bind="contacts | filterBy:filter:'firstName':'lastName':'company'"
+                group-by="firstLetter" order-by="fullName">
+      <template replace-part="item">
+        <a route-href="route: contact-details; params.bind: { id: id }" class="cl-details-link">
+          <span if.bind="isPerson">
+            ${firstName} <strong>${lastName}</strong>
+          </span>
+          <span if.bind="!isPerson">
+            <strong>${company}</strong>
+          </span>
+        </a>
+      </template>
+    </group-list>
+  </section>
+</template>

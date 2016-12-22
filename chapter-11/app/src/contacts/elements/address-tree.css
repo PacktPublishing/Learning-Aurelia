@@ -1,0 +1,31 @@
+contact-address-tree .node circle {
+  fill: #d9edf7;
+  stroke: #337ab7;
+  stroke-width: 1.5px;
+}
+
+contact-address-tree .node text {
+  font: 15px;
+}
+
+contact-address-tree .node text {
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+contact-address-tree .leaf {
+  cursor: pointer;
+}
+
+contact-address-tree .leaf circle {
+  fill: #337ab7;
+}
+
+contact-address-tree .leaf text {
+  font-weight: bold;
+}
+
+contact-address-tree .link {
+  fill: none;
+  stroke: #777;
+  stroke-width: 1.5px;
+}

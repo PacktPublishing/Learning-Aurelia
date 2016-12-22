@@ -1,0 +1,16 @@
+{
+  "name": "deploy",
+  "description": "Builds, processes and deploy all application assets.",
+  "flags": [
+    {
+      "name": "out",
+      "description": "Sets the output directory (required)",
+      "type": "string"
+    },
+    {
+      "name": "env",
+      "description": "Sets the build environment.",
+      "type": "string"
+    }
+  ]
+}

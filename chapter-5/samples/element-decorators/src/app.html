@@ -1,0 +1,58 @@
+<template>
+  <h1>Examples of custom element decorators</h1>
+
+  <hr>
+  <h3><code>processAttribute</code></h3>
+  <p>Here, a simple custom element with the <code>processAttribute</code> decorator
+    ensures that the element has an <code>id</code> attribute and, if not, generates one.
+    You can remove the <code>id</code> attribute on the following element to see the processing
+    function at work.</p>
+  <div>
+    <process-attributes-sample id="test-1" title="A processAttribute example"></process-attributes-sample>
+  </div>
+
+  <hr>
+  <h3><code>processContent(false)</code></h3>
+  <p>Here, a viewless custom element with the <code>processContent(false)</code> decorator
+    will render its content as is, without having it interpreted by the templating engine.
+    The string interpolation instruction won't be processed and will be displayed as is.</p>
+  <div>
+    <process-no-content-sample>${title}</process-no-content-sample>
+  </div>
+
+  <hr>
+  <h3><code>processContent(function)</code></h3>
+  <p>Here, a viewless custom element with the <code>processContent</code> decorator
+    with a processing function returning <code>false</code> will act just like 
+    <code>processContent(false)</code>, except that the processing function has a chance
+    to process the content before returning. Here, it simply logs its parameters in the 
+    browser's console. If you change the returned value for <code>true</code>, you will
+    see that the content gets correctly processed, and the string interpolation
+    instruction gets applied.</p>
+  <div>
+    <process-content-sample>${title}</process-content-sample>
+  </div>
+
+  <hr>
+  <h3><code>containerless</code></h3>
+  <p>Here, a custom attribute with the <code>containerless</code> decorator
+    is rendered. The surrounding <code>containerless-sample</code> element gets
+    removed during rendering. If you remove the <code>containerless</code>
+    decorator from the custom element, you will see that the <code>containerless-sample</code>
+    element gets properly rendered.</p>
+  <div>
+    <containerless-sample title.bind="title"></containerless-sample>
+  </div>
+
+  <hr>
+  <h3><code>child</code> and <code>children</code></h3>
+  <p>Here, a custom element uses the <code>child</code> and <code>children</code>
+  decorators to get references on children elements, and logs them in the browser
+  console when they change.</p>
+  <div>
+    <child-children-sample>
+      <header>Some header</header>
+      <item repeat.for="i of 5">Item ${i + 1}</item>
+    </child-children-sample>
+  </div>
+</template>

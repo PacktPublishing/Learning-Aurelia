@@ -1,0 +1,58 @@
+<template>
+  <h1>throttle</h1>
+  
+  <hr>
+  <h3>Using one-way binding.</h3>
+  <p>Here, <code>throttle</code> is applied on the string interpolation instructions displaying the input's value.</p>
+  <input ref="input">
+  <p>Unthrottled: ${input.value}</p>
+  <p>Throttled (default delay): ${input.value & throttle}</p>
+  <p>Throttled (1s delay): ${input.value & throttle:1000}</p>
+
+  <hr>
+  <h3>Using two-way binding.</h3>
+  <p>Here, <code>throttle</code> is applied on the binding of the <code>value</code> attribute of the <code>input</code>. 
+  They are all bound to the same view-model property, so you can clearly see that <code>throttle</code> is applied when 
+  the updates flow from the input to the view-model when decorating a two-way binding.</p>
+  <div>
+    Unthrottled:
+    <input value.bind="value">
+    View-model value: ${value}
+  </div>
+  <div>
+    Throttled (default delay):
+    <input value.bind="value & throttle">
+    View-model value: ${value}
+  </div>
+  <div>
+    Throttled (1s delay):
+    <input value.bind="value & throttle:1000">
+    View-model value: ${value}
+  </div>
+
+  <hr>
+  <style>
+    .mousemove {
+      border: 1px solid black;
+      margin: 8px;
+    }
+  </style>
+  <h3>On events</h3>
+  <p>Here, <code>throttle</code> is applied on an event binding. As such, the dispatching of the event 
+  to the view-model will be throttled accordingly.</p>
+  <div mousemove.delegate="position = $event" class="mousemove">
+    <h4>Mouse move, unthrottled</h4>
+    <span hide.bind="position">Move your mouse here.</span>
+    <span show.bind="position">Mouse last moved at (${position.clientX}, ${position.clientY}).</span>
+  </div>
+  <div mousemove.delegate="position = $event & throttle" class="mousemove">
+    <h4>Mouse move, throttled (default delay)</h4>
+    <span hide.bind="position">Move your mouse here.</span>
+    <span show.bind="position">Mouse last moved at (${position.clientX}, ${position.clientY}).</span>
+  </div>
+  <div mousemove.delegate="position = $event & throttle:1000" class="mousemove">
+    <h4>Mouse move, throttled (1s delay)</h4>
+    <span hide.bind="position">Move your mouse here.</span>
+    <span show.bind="position">Mouse last moved at (${position.clientX}, ${position.clientY}).</span>
+  </div>
+</template>

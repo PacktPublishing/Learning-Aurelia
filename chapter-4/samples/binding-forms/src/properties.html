@@ -1,0 +1,33 @@
+<template>
+  <h1><code>disabled</code> &amp; <code>readonly</code> properties</h1>
+
+  <hr>
+  <h3><code>disabled</code></h3>
+  <p>Here, the form elements are disabled when the checkbox is checked.</p>
+  <div>
+    <input type="text" disabled.bind="isDisabled">
+    <select disabled.bind="isDisabled">
+      <option>Value A</option>
+      <option>Value B</option>
+    </select>
+    <button disabled.bind="isDisabled">Test</button>
+  </div>
+  <label>
+    <input type="checkbox" checked.bind="isDisabled">
+    Disabled
+  </label>
+
+  <hr>
+  <h3><code>readonly</code></h3>
+  <p>Here, the input is read-only when the checkbox is checked.</p>
+  <div>
+    <input type="text" readonly.bind="isReadonly">
+  </div>
+  <div>
+    <textarea readonly.bind="isReadonly"></textarea>
+  </div>
+  <label>
+    <input type="checkbox" checked.bind="isReadonly">
+    Read-only
+  </label>
+</template>

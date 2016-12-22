@@ -1,0 +1,105 @@
+{
+  "title": "Apprendre Aurelia",
+  "404": {
+    "explanation": "La page est introuvable.",
+    "title": "Quelque-chose ne fonctionne pas…"
+  },
+  "nav": {
+    "toggle": "Ouvrir/fermer le menu"
+  },
+  "locales": {
+    "en": "Anglais",
+    "fr": "Français"
+  },
+  "validation": {
+    "messages": {
+      "default": "${$displayName} est invalide.",
+      "required": "${$displayName} ne peut être vide.",
+      "matches": "${$displayName} n'a pas un format valide.",
+      "email": "${$displayName} n'est pas un email valide.",
+      "minLength": "${$displayName} doit contenir au moins ${$config.length} caractère${$config.length === 1 ? '' : 's'}.",
+      "maxLength": "${$displayName} ne doit pas contenir plus de ${$config.length} caractère${$config.length === 1 ? '' : 's'}.",
+      "minItems": "${$displayName} doit contenir au moins ${$config.count} item${$config.count === 1 ? '' : 's'}.",
+      "maxItems": "${$displayName} ne doit pas contenir plus de ${$config.count} item${$config.count === 1 ? '' : 's'}.",
+      "equals": "${$displayName} doit égaler ${$config.expectedValue}.",
+      "date": "${$displayName} n'est pas une date valide.",
+      "notEmpty": "${$displayName} doit contenir au moins un item.",
+      "maxFileSize": "${$displayName} doit faire moins de ${$config.maxSize} octets.",
+      "fileExtension": "${$displayName} doit avoir une des extensions suivantes: ${$config.extensions.join(', ')}."
+    },
+    "properties": {
+      "address": "L'adresse électronique",
+      "birthday": "La date d'anniversaire",
+      "city": "La ville",
+      "company": "La compagnie",
+      "country": "Le pays",
+      "firstName": "Le prénom",
+      "lastName": "Le nom",
+      "note": "La note",
+      "number": "Le numéro",
+      "postalCode": "Le code postal",
+      "state": "L'état",
+      "street": "La rue",
+      "username": "Le nom d'utilisateur"
+    }
+  },
+  "resources": {
+    "actions": {
+      "add": "Ajouter",
+      "remove": "Supprimer",
+      "submit": "Soumettre"
+    }
+  },
+  "contacts": {
+    "addAddress": "Ajouter une adresse",
+    "addEmailAddress": "Ajouter une adresse électronique",
+    "addPhoneNumber": "Ajouter un numéro de téléphone",
+    "addSocialProfile": "Ajouter un profil de réseau social",
+    "addresses": "Adresses",
+    "birthday": "Date d'anniversaire",
+    "cancel": "Annuler",
+    "changePhoto": "Changer la photo",
+    "city": "Ville",
+    "clear": "Supprimer",
+    "company": "Compagnie",
+    "confirmDelete": "Voulez-vous supprimer ce contact?",
+    "contactId": "Contact #{{id}}",
+    "contacts": "Contacts",
+    "country": "Pays",
+    "createdOn": "Créé le",
+    "delete": "Supprimer",
+    "emailAddress": "Adresse électronique",
+    "emailAddresses": "Adresses électroniques",
+    "filter": "Filtrer",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "modifiedOn": "Modifié le",
+    "modify": "Modifier",
+    "new": "Nouveau",
+    "newContact": "Nouveau contact",
+    "note": "Note",
+    "number": "Numéro",
+    "phoneNumber": "Numéro de téléphone",
+    "phoneNumbers": "Numéros de téléphone",
+    "photo": "Photo",
+    "pickPhoto": "Cliquez pour sélectionner un fichier ou glissez un fichier ici",
+    "postalCode": "Code postal",
+    "preview": "Aperçu",
+    "save": "Sauvegarder",
+    "socialProfiles": "Profils de réseaux sociaux",
+    "state": "État",
+    "street": "Rue",
+    "types": {
+      "GitHub": "GitHub",
+      "Home": "Maison",
+      "Office": "Bureau",
+      "Mobile": "Portable",
+      "Other": "Autre",
+      "Twitter": "Twitter"
+    },
+    "username": "Nom d'utilisateur",
+    "validation": {
+      "singleFile": "${$displayName} doit contenir 1 fichier."
+    }
+  }
+}

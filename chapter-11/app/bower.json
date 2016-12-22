@@ -1,0 +1,9 @@
+{
+  "name": "learning-aurelia",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "google-map": "GoogleWebComponents/google-map#^1.1.13",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.20"
+  }
+}

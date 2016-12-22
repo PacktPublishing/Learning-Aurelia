@@ -1,0 +1,12 @@
+<template bindable="items, groupBy, orderBy">
+  <div repeat.for="group of items | groupBy:groupBy | orderBy:'key'" class="panel panel-default">
+    <div class="panel-heading">${group.key}</div>
+    <ul class="list-group">
+      <li repeat.for="item of group.items | orderBy:orderBy" class="list-group-item">
+        <template with.bind="item">
+          <template replaceable part="item">${$this}</template>
+        </template>
+      </li>
+    </ul>
+  </div>
+</template>

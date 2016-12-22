@@ -1,0 +1,119 @@
+<template bindable="contact">
+  <div class="form-group">
+    <label class="col-sm-3 control-label">First name</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.firstName & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Last name</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.lastName & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Company</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.company & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Birthday</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" value.bind="contact.birthday & validate">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Note</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" value.bind="contact.note & validate"></textarea>
+    </div>
+  </div>
+
+  <hr>
+  <list-editor items.bind="contact.phoneNumbers" add-item.call="contact.addPhoneNumber()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="Home">Home</option>
+        <option value="Office">Office</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Other">Other</option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <input type="tel" class="form-control" placeholder="Phone number" value.bind="number & validate">
+    </template>
+    <span slot="add-button-label">Add a phone number</span>
+  </list-editor>
+
+  <hr>
+  <list-editor items.bind="contact.emailAddresses" add-item.call="contact.addEmailAddress()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="Home">Home</option>
+        <option value="Office">Office</option>
+        <option value="Other">Other</option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <input type="email" class="form-control" placeholder="Email address" value.bind="address & validate">
+    </template>
+    <span slot="add-button-label">Add an email address</span>
+  </list-editor>
+
+  <hr> 
+  <list-editor items.bind="contact.addresses" add-item.call="contact.addAddress()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="Home">Home</option>
+        <option value="Office">Office</option>
+        <option value="Other">Other</option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Number" value.bind="number & validate">
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="Street" value.bind="street & validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Postal code" value.bind="postalCode & validate">
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="City" value.bind="city & validate">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="State" value.bind="state & validate">
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="Country" value.bind="country & validate">
+        </div>
+      </div>
+    </template>
+    <span slot="add-button-label">Add an address</span>
+  </list-editor>
+
+  <hr>
+  <list-editor items.bind="contact.socialProfiles" add-item.call="contact.addSocialProfile()">
+    <template replace-part="label">
+      <select value.bind="type & validate" class="form-control">
+        <option value="GitHub">GitHub</option>
+        <option value="Twitter">Twitter</option>
+      </select>
+    </template>
+    <template replace-part="value">
+      <input type="text" class="form-control" placeholder="Username" value.bind="username & validate">
+    </template>
+    <span slot="add-button-label">Add a social profile</span>
+  </list-editor>
+</template>

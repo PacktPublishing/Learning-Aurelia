@@ -1,0 +1,71 @@
+<template>
+  <h1>Checkboxes</h1>
+
+  <hr>
+  <h3>Scalar items</h3>
+  <p>Here, a list of checkboxes is rendered using an array of strings.</p>
+  <div class="checkbox" repeat.for="country of countries">
+    <label>
+      <input type="checkbox" value.bind="country" checked.bind="selectedCountries">
+      ${country}
+    </label>
+  </div>
+  Selected values:
+  <template repeat.for="c of selectedCountries"><template if.bind="!$first">, </template>${c}</template>
+
+  <hr>
+  <h3>Object items, selected <code>model</code></h3>
+  <p>Here, a list of checkboxes is rendered using an array of objects, and
+  the selected <code>input</code>'s <code>model</code> is assigned to the expression bound to the
+  <code>input</code>'s <code>checked</code> attribute.</p>
+  <div class="checkbox" repeat.for="culture of cultures">
+    <label>
+      <input type="checkbox" model.bind="culture" checked.bind="selectedCultures">
+      ${culture.name}
+    </label>
+  </div>
+  Selected values:
+  <template repeat.for="c of selectedCultures"><template if.bind="!$first">, </template>${c | json}</template>
+
+  <hr>
+  <h3>Object items, selected <code>value</code></h3>
+  <p>Here, a list of checkboxes is rendered using an array of objects, and
+  the selected <code>input</code>'s <code>value</code> is assigned to the expression bound to the
+  <code>input</code>'s <code>checked</code> attribute.</p>
+  <div class="checkbox" repeat.for="culture of cultures">
+    <label>
+      <input type="checkbox" value.bind="culture.isoCode" checked.bind="selectedCulturesIsoCodes">
+      ${culture.name}
+    </label>
+  </div>
+  Selected values:
+  <template repeat.for="c of selectedCulturesIsoCodes"><template if.bind="!$first">, </template>${c}</template>
+
+  <hr>
+  <h3>Binding boolean values</h3>
+  <p>Here, a static list of checkboxes is rendered without any <code>value</code> or 
+  <code>model</code> attribute. If the checkbox is checked, <code>true</code> is assigned
+  to the expression bound to the <code>input</code>'s <code>checked</code> attribute. Otherwise,
+  <code>false</code> is assigned. 
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" checked.bind="speaksFrench">French
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" checked.bind="speaksEnglish">English
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" checked.bind="speaksGerman">German
+    </label>
+  </div>
+  Selected values:
+  <ul>
+    <li>speaksFrench = ${speaksFrench | json}</li>
+    <li>speaksEnglish = ${speaksEnglish | json}</li>
+    <li>speaksGerman = ${speaksGerman | json}</li>
+  </ul>
+</template>

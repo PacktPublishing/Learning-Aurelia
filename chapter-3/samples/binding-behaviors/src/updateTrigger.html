@@ -1,0 +1,10 @@
+<template>
+  <h1>updateTrigger</h1>
+
+  <div>
+    <h3>Updating on <code>blur</code></h3>
+    <p>Here, the view-model's value will be updated only when the input loses the focus.</p>
+    <input value.bind="value & updateTrigger:'blur'">
+    View-model's value: ${value}
+  </div>
+</template>

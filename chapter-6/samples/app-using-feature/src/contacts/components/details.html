@@ -1,0 +1,120 @@
+<template>
+  <section class="container">
+    <div class="row">
+      <div class="col-sm-2">
+        <a route-href="route: contact-photo; params.bind: { id: contact.id }" title="Change the photo">
+          <img src.bind="contact.photoUrl" class="img-responsive" alt="Photo">
+        </a>
+      </div>
+      <div class="col-sm-10">
+        <template if.bind="contact.isPerson">
+          <h1>${contact.fullName}</h1>
+          <h2>${contact.company}</h2>
+        </template>
+        <template if.bind="!contact.isPerson">
+          <h1>${contact.company}</h1>
+        </template>
+        <a class="btn btn-default" route-href="route: contact-edition; params.bind: { id: contact.id }">
+          <i class="fa fa-pencil-square-o"></i> Modify
+        </a>
+        <button class="btn btn-danger" click.delegate="tryDelete()">
+          <i class="fa fa-trash-o"></i> Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Created on</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">${contact.createdAt}</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Modified on</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">${contact.modifiedAt}</p>
+        </div>
+      </div>
+
+      <div class="form-group" if.bind="contact.birthday">
+        <label class="col-sm-2 control-label">Birthday</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">${contact.birthday}</p>
+        </div>
+      </div>
+
+      <template if.bind="contact.phoneNumbers.length > 0">
+        <hr>
+        <div class="form-group">
+          <h4 class="col-sm-2 control-label">Phone numbers</h4>
+        </div>
+        <div class="form-group" repeat.for="phoneNumber of contact.phoneNumbers">
+          <label class="col-sm-2 control-label">${phoneNumber.type}</label>
+          <div class="col-sm-10">
+            <p class="form-control-static"><a href="tel:${phoneNumber.number}">${phoneNumber.number}</a></p>
+          </div>
+        </div>
+      </template>
+
+      <template if.bind="contact.emailAddresses.length > 0">
+        <hr>
+        <div class="form-group">
+          <h4 class="col-sm-2 control-label">Email addresses</h4>
+        </div>
+        <div class="form-group" repeat.for="emailAddress of contact.emailAddresses">
+          <label class="col-sm-2 control-label">${emailAddress.type}</label>
+          <div class="col-sm-10">
+            <p class="form-control-static">
+              <a href="mailto:${emailAddress.address}" target="_blank">${emailAddress.address}</a>
+            </p>
+          </div>
+        </div>
+      </template>
+
+      <template if.bind="contact.addresses.length > 0">
+        <hr>
+        <div class="form-group">
+          <h4 class="col-sm-2 control-label">Addresses</h4>
+        </div>
+        <div class="form-group" repeat.for="address of contact.addresses">
+          <label class="col-sm-2 control-label">${address.type}</label>
+          <div class="col-sm-10">
+            <p class="form-control-static">${address.number} ${address.street}</p>
+            <p class="form-control-static">${address.postalCode} ${address.city}</p>
+            <p class="form-control-static">${address.state} ${address.country}</p>
+          </div>
+        </div>
+      </template>
+
+      <template if.bind="contact.socialProfiles.length > 0">
+        <hr>
+        <div class="form-group">
+          <h4 class="col-sm-2 control-label">Social Profiles</h4>
+        </div>
+        <div class="form-group" repeat.for="profile of contact.socialProfiles">
+          <label class="col-sm-2 control-label">${profile.type}</label>
+          <div class="col-sm-10">
+            <p class="form-control-static">
+              <a if.bind="profile.type === 'GitHub'" href="https://github.com/${profile.username}" target="_blank">${profile.username}</a>
+              <a if.bind="profile.type === 'Twitter'" href="https://twitter.com/${profile.username}" target="_blank">${profile.username}</a>
+            </p>
+          </div>
+        </div>
+      </template>
+
+      <template if.bind="contact.note">
+        <hr>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Note</label>
+          <div class="col-sm-10">
+            <p class="form-control-static">${contact.note}</p>
+          </div>
+        </div>
+      </template>
+
+    </div>
+  </section>
+
+</template>

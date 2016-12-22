@@ -1,0 +1,109 @@
+{
+  "404": {
+    "explanation": "The page cannot be found.",
+    "title": "Something is broken…"
+  },
+  "nav": {
+    "toggle": "Toggle Navigation"
+  },
+  "locales": {
+    "en": "English",
+    "fr": "French"
+  },
+  "validation": {
+    "messages": {
+      "default": "${$displayName} is invalid.",
+      "required": "${$displayName} is required.",
+      "matches": "${$displayName} is not correctly formatted.",
+      "email": "${$displayName} is not a valid email.",
+      "minLength": "${$displayName} must be at least ${$config.length} character${$config.length === 1 ? '' : 's'}.",
+      "maxLength": "${$displayName} cannot be longer than ${$config.length} character${$config.length === 1 ? '' : 's'}.",
+      "minItems": "${$displayName} must contain at least ${$config.count} item${$config.count === 1 ? '' : 's'}.",
+      "maxItems": "${$displayName} cannot contain more than ${$config.count} item${$config.count === 1 ? '' : 's'}.",
+      "equals": "${$displayName} must be ${$config.expectedValue}.",
+      "date": "${$displayName} must be a valid date.",
+      "notEmpty": "${$displayName} must contain at least one item.",
+      "maxFileSize": "${$displayName} must be smaller than ${$config.maxSize} bytes.",
+      "fileExtension": "${$displayName} must have one of the following extensions: ${$config.extensions.join(', ')}."
+    },
+    "properties": {
+      "address": "Address",
+      "birthday": "Birthday",
+      "city": "City",
+      "company": "Company",
+      "country": "Country",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "note": "Note",
+      "number": "Number",
+      "postalCode": "Postal code",
+      "state": "State",
+      "street": "Street",
+      "username": "Username"
+    }
+  },
+  "resources": {
+    "actions": {
+      "add": "Add",
+      "remove": "Remove",
+      "submit": "Submit"
+    }
+  },
+  "contacts": {
+    "addAddress": "Add an address",
+    "addEmailAddress": "Add an email address",
+    "addPhoneNumber": "Add a phone number",
+    "addSocialProfile": "Add a social profile",
+    "addresses": "Addresses",
+    "birthday": "Birthday",
+    "byAddress": "Contacts by Address",
+    "cancel": "Cancel",
+    "changePhoto": "Change the photo",
+    "city": "City",
+    "clear": "Clear",
+    "company": "Company",
+    "confirmDelete": "Do you want to delete this contact?",
+    "contactId": "Contact #{{id}}",
+    "contacts": "Contacts",
+    "country": "Country",
+    "createdOn": "Created on",
+    "delete": "Delete",
+    "emailAddress": "Email address",
+    "emailAddresses": "Email addresses",
+    "filter": "Filter",
+    "firstName": "First name",
+    "hideMap": "Hide map",
+    "lastName": "Last name",
+    "modifiedOn": "Modified on",
+    "modify": "Modify",
+    "new": "New",
+    "newContact": "New contact",
+    "note": "Note",
+    "number": "Number",
+    "phoneNumber": "Phone number",
+    "phoneNumbers": "Phone numbers",
+    "photo": "Photo",
+    "pickPhoto": "Click to select a file or drag and drop one here",
+    "postalCode": "Postal code",
+    "preview": "Preview",
+    "save": "Save",
+    "showMap": "Show map",
+    "socialProfiles": "Social Profiles",
+    "state": "State",
+    "street": "Street",
+    "types": {
+      "GitHub": "GitHub",
+      "Home": "Home",
+      "Office": "Office",
+      "Mobile": "Mobile",
+      "Other": "Other",
+      "Twitter": "Twitter"
+    },
+    "username": "Username",
+    "validation": {
+      "singleFile": "${$displayName} must contain 1 file."
+    },
+    "viewByAddress": "View contacts grouped by address",
+    "viewByName": "View contacts grouped by name"
+  }
+}

@@ -1,0 +1,6 @@
+<template>
+  <h1>signal</h1>
+
+  <p>Without signal: ${lastUpdatedAt | timeInterval}</p>
+  <p>With a signal every 2 seconds: ${lastUpdatedAt | timeInterval & signal:'now'}</p>
+</template>

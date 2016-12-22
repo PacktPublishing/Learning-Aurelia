@@ -1,0 +1,14 @@
+<template> 
+  <require from="./by-address.css"></require>
+  <require from="../elements/address-tree"></require>
+  
+  <section class="container au-animate">
+    <h1 t="contacts.byAddress"></h1>
+    
+    <p>
+      <a route-href="route: contacts" t="contacts.viewByName"></a>
+    </p>
+
+    <contact-address-tree contacts.bind="contacts" click.call="navigateToDetails(contact)"></contact-address-tree>
+  </section>
+</template>
