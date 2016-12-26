@@ -9,8 +9,8 @@ Durandal, it is based on cutting edge Web standards, and is built on modern soft
 architecture concepts and ideas, to offer a powerful toolset and an awesome developer
 experience.
 ##Instructions and Navigationsss
-All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
-
+All of the codes are organized as per the chapters, each folder has the codes related to that chapter or appendix.
+For example: Learning-Aurelia/chapter-8/app/index.html
 
 
 The code will look like the following:
@@ -29,8 +29,6 @@ The code will look like the following:
 </html>
 ```
 
-All of the codes are organized as per the chapters, each folder has the codes related to that chapter or appendix.
-For example: Learning-Aurelia/chapter-8/app/index.html
 
 ##Related Products
 * [Mastering TypeScript - Second Edition](https://www.packtpub.com/web-development/learning-ext-js-4?utm_source=github&utm_medium=repository&utm_campaign=9781849516846)
