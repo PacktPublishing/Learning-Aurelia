@@ -10,6 +10,7 @@ architecture concepts and ideas, to offer a powerful toolset and an awesome deve
 experience.
 ##Instructions and Navigationsss
 All of the codes are organized as per the chapters, each folder has the codes related to that chapter or appendix.
+
 For example: Learning-Aurelia/chapter-8/app/index.html
 
 
