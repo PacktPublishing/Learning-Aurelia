@@ -31,10 +31,10 @@ The code will look like the following:
 
 
 ##Related Products
-* [Mastering TypeScript - Second Edition](https://www.packtpub.com/web-development/learning-ext-js-4?utm_source=github&utm_medium=repository&utm_campaign=9781849516846)
+* [Mastering TypeScript - Second Edition](https://www.packtpub.com/application-development/mastering-typescript-second-edition?utm_source=GitHub&utm_campaign=9781786468710&utm_medium=repository)
 
-* [Learning Ext JS 4](https://www.packtpub.com/web-development/web-content-management-documentum?utm_source=github&utm_medium=repository&utm_campaign=9781904811091)
+* [Learning Ext JS 4](https://www.packtpub.com/web-development/learning-ext-js-4?utm_source=GitHub&utm_campaign=9781849516846&utm_medium=repository)
 
-* [Web Content Management with Documentum](https://www.packtpub.com/web-development/web-content-management-documentum?utm_source=github&utm_medium=repository&utm_campaign=9781904811091)
+* [Web Content Management with Documentum](https://www.packtpub.com/web-development/web-content-management-documentum?utm_source=GitHub&utm_campaign=9781849516846&utm_medium=repository)
 ###Suggestions and Feedback
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSe5qwunkGf6PUvzPirPDtuy1Du5Rlzew23UBp2S-P3wB-GcwQ/viewform) if you have any feedback or suggestions.
