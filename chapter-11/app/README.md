@@ -9,9 +9,14 @@ This is the Contacts Management Application as it should be at the end of Chapte
   ```shell
   npm install aurelia-cli -g
   ```
-3. Restore the application's packages by running the following command from the project folder:
+3. If `bower` is not globally installed, run the following command:
+  ```shell
+  npm install bower -g
+  ```
+3. Restore the application's packages by running the following commands from the project folder:
   ```shell
   npm install
+  bower install
   ```
 
 ## Running the Application
