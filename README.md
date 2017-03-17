@@ -1,5 +1,5 @@
 #Learning Aurelia
-This is the code repository for [Learning Aurelia](https://www.packtpub.com/web-development/learning-aurelia?utm_source=github&utm_medium=repository&utm_campaign=9781785889677), published by [Packt](www.packtpub.com). It contains all the supporting project files necessary to work through the book from start to finish.
+This is the code repository for [Learning Aurelia](https://www.packtpub.com/web-development/learning-aurelia?utm_source=github&utm_medium=repository&utm_campaign=9781785889677), published by [Packt](https://www.packtpub.com). It contains all the supporting project files necessary to work through the book from start to finish.
 ## About the Book
 The Web evolves very quickly. Technologies come and go, and every couple of years, new
 ideas emerge and become widely popular, only to be replaced by something else after a
