@@ -15,19 +15,19 @@
         "transform-es2015-modules-amd"
       ]
     },
-    "source": "src\\**\\*.js"
+    "source": "src/**/*.js"
   },
   "markupProcessor": {
     "id": "none",
     "displayName": "None",
     "fileExtension": ".html",
-    "source": "src\\**\\*.html"
+    "source": "src/**/*.html"
   },
   "cssProcessor": {
     "id": "none",
     "displayName": "None",
     "fileExtension": ".css",
-    "source": "src\\**\\*.css"
+    "source": "src/**/*.css"
   },
   "editor": {
     "id": "vscode",
@@ -36,7 +36,7 @@
   "unitTestRunner": {
     "id": "karma",
     "displayName": "Karma",
-    "source": "test\\unit\\**\\*.js"
+    "source": "test/unit/**/*.js"
   },
   "e2eTestRunner": {
     "id": "protractor",
@@ -55,11 +55,11 @@
   },
   "paths": {
     "root": "src",
-    "resources": "src\\resources",
-    "elements": "src\\resources\\elements",
-    "attributes": "src\\resources\\attributes",
-    "valueConverters": "src\\resources\\value-converters",
-    "bindingBehaviors": "src\\resources\\binding-behaviors"
+    "resources": "src/resources",
+    "elements": "src/resources/elements",
+    "attributes": "src/resources/attributes",
+    "valueConverters": "src/resources/value-converters",
+    "bindingBehaviors": "src/resources/binding-behaviors"
   },
   "testFramework": {
     "id": "jasmine",
